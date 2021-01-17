@@ -38,8 +38,7 @@ function currentTime(){
     } / ${dt.getDate()} / ${dt.getFullYear()}`;
 
     $("#currentDay").text(todaysDate);
-    // let currentHour = dt.getHours();
-    let currentHour = 14;
+    let currentHour = dt.getHours();
     let currentTime = dt.toLocaleTimeString();
     document.getElementById("currentTime").innerHTML = currentTime;
 
