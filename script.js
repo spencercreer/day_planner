@@ -40,6 +40,7 @@ function currentTime(){
     $("#currentDay").text(todaysDate);
     let currentHour = dt.getHours();
     let currentTime = dt.toLocaleTimeString();
+    console.log(currentTime)
     document.getElementById("currentTime").innerHTML = currentTime;
 
     $("textarea").each(function(){
