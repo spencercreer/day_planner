@@ -13,6 +13,16 @@ textarea{
   padding: 10px;
 }
 
+#currentDay{
+  color: #000000;
+  font-size: 28px;
+}
+
+#weekDay{
+  color: #000000;
+  font-size: 48px;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;

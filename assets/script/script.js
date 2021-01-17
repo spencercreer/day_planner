@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 // Get items from localStorage for each hour
 function init(){
     let dt = new Date();
@@ -33,11 +36,15 @@ setInterval(currentTime,1000)
 // Get current time update time blocks
 function currentTime(){
     let dt = new Date();
-    let todaysDate = `${
-      dt.getMonth() + 1
-    } / ${dt.getDate()} / ${dt.getFullYear()}`;
+    let day = dt.getDate();
+    let weekDay = weekdays[dt.getDay()]
+    let month = months[dt.getMonth()];
+    let year = dt.getFullYear();
+    let todaysDate = day + " " + month + " " + year;
 
     $("#currentDay").text(todaysDate);
+    $("#weekDay").text(weekDay);
+
     let currentHour = dt.getHours();
     let currentTime = dt.toLocaleTimeString();
     console.log(currentTime)
