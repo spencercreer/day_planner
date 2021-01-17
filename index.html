@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link id="pagestyle" rel="stylesheet" href="style.css" />
     <title>Day Planner</title>
   </head>
 
@@ -31,6 +31,7 @@
 
     </header>
     <div class="container">
+      <button class="swapStyle">Change Planner Style</button>
       <!-- Timeblocks go here -->
       <div class="row">
         <div class="col-sm-2 hour">6:00</div>
@@ -96,8 +97,7 @@
         <div class="col-sm-2 hour">18:00</div>
         <textarea class="col-sm-8" id="18" rows="2"></textarea>
         <button class="col-sm-2 saveBtn far fa-save"></button>
-      </div>
-      
+      </div>      
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

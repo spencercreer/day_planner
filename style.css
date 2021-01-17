@@ -17,7 +17,7 @@ textarea{
   text-align: center;
   background-color: transparent;
   color: black;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   border-radius: 0;
   border-bottom: 10px solid black;
 }
@@ -57,6 +57,11 @@ textarea{
 .future {
   background-color: #C6E0B4;
   color: black;
+}
+
+.swapStyle{
+  height: 40px;
+  border-radius: 5px;
 }
 
 .saveBtn {
