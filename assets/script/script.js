@@ -9,7 +9,7 @@ function init(){
 
     var storedDate = localStorage.getItem("today");
     if(!localStorage.getItem("Style")){
-        localStorage.setItem("Style","style.css")
+        localStorage.setItem("Style","assets/style/style.css")
     }
     var storedStyle = localStorage.getItem("Style");
 
@@ -73,12 +73,12 @@ $(".saveBtn").on("click", function(){
 // On change style button click, change style
 $(".swapStyle").on("click",function(){
     let style = $("#pagestyle").attr("href")
-    if(style === "style.css"){
-        $("#pagestyle").attr("href","dark_style.css");
-        localStorage.setItem("Style", "dark_style.css");
+    if(style === "assets/style/style.css"){
+        $("#pagestyle").attr("href","assets/style/dark_style.css");
+        localStorage.setItem("Style", "assets/style/dark_style.css");
     } else{
-        $("#pagestyle").attr("href","style.css");
-        localStorage.setItem("Style", "style.css");
+        $("#pagestyle").attr("href","assets/style/style.css");
+        localStorage.setItem("Style", "assets/style/style.css");
     }
 })
 
