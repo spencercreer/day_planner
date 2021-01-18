@@ -55,7 +55,8 @@ function currentTime(){
 
         // Check if past
         if(blockTime < currentHour){
-            $(this).removeClass("present")
+            $(this).removeClass("future");
+            $(this).removeClass("present");
             $(this).addClass("past");
         // Check if present
         } else if(currentHour === blockTime){
