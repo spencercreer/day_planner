@@ -15,4 +15,4 @@ Repository: https://github.com/spencercreer/day_planner
 
 The following animation demonstrates the application functionality:
 
-![Day planner annimation](./assets/images/day_planner.gif)
+![Day planner animation](./assets/images/day_planner.gif)
