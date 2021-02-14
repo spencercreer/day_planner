@@ -1,15 +1,30 @@
 $(document).ready(function() {
-
+// Month and weekday array
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+var time = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm"]
 
-// Get items from localStorage for each hour
 function init(){
+    // Get date using JavaScript date methods
     let dt = new Date();
     let todaysDate = `${
       dt.getMonth() + 1
     } / ${dt.getDate()} / ${dt.getFullYear()}`;
 
+
+    // Create timeblocks using template literals
+    for (let i = 0; i < time.length; i++) {
+        const timeblock = `
+        <div class="row">
+            <div class="col-sm-2 hour">${time[i]}</div>
+            <textarea class="col-sm-8" id="${6+i}" rows="2"></textarea>
+            <button class="col-sm-2 saveBtn far fa-save"></button>
+        </div>
+        `;
+        $("#time-blocks").append(timeblock);
+    }
+
+    // Get items from localStorage for each hour
     var storedDate = localStorage.getItem("today");
     if(!localStorage.getItem("Style")){
         localStorage.setItem("Style","assets/style/style.css")
