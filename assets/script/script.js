@@ -1,8 +1,9 @@
 $(document).ready(function() {
-// Month and weekday array
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var time = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm"]
+    // Month and weekday array
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var time = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm"]
+    var buttonText = $(".swapStyle")
 
 function init(){
     // Get date using JavaScript date methods
@@ -16,9 +17,9 @@ function init(){
     for (let i = 0; i < time.length; i++) {
         const timeblock = `
         <div class="row">
-            <div class="col-sm-2 hour">${time[i]}</div>
-            <textarea class="col-sm-8" id="${6+i}" rows="2"></textarea>
-            <button class="col-sm-2 saveBtn far fa-save"></button>
+            <div class="col-2 hour">${time[i]}</div>
+            <textarea class="col-8" id="${6+i}" rows="2"></textarea>
+            <button class="col-2 saveBtn far fa-save"></button>
         </div>
         `;
         $("#time-blocks").append(timeblock);
@@ -30,6 +31,11 @@ function init(){
         localStorage.setItem("Style","assets/style/style.css")
     }
     var storedStyle = localStorage.getItem("Style");
+    if(storedStyle === "assets/style/style.css"){
+        buttonText.text("Light Mode")
+    } else{
+        buttonText.text("Dark Mode")
+    }
 
     $("#pagestyle").attr("href",storedStyle);
     
@@ -97,9 +103,11 @@ $(".swapStyle").on("click",function(){
     let style = $("#pagestyle").attr("href")
     if(style === "assets/style/style.css"){
         $("#pagestyle").attr("href","assets/style/dark_style.css");
+        buttonText.text("Dark Mode")
         localStorage.setItem("Style", "assets/style/dark_style.css");
     } else{
         $("#pagestyle").attr("href","assets/style/style.css");
+        buttonText.text("Light Mode")
         localStorage.setItem("Style", "assets/style/style.css");
     }
 })
